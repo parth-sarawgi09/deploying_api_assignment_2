@@ -13,3 +13,15 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+
+require('dotenv').config();
+
+const isAdmin = process.env.IS_SERVER === 'true';
+
+if (isAdmin) {
+  console.log("SERVER privileges granted.");
+} else {
+  console.log("SERVER restricted. SERVER only.");
+}
+
